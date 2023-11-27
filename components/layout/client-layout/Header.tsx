@@ -35,29 +35,6 @@ const Header = () => {
   }, [Products, search]);
   return (
     <div className="d:block fixed z-50 w-full top-0 p:hidden">
-      <div className="bg-gray-100">
-        <div className="h-10 flex justify-between w-[1300px] mx-auto">
-          <div className="flex gap-4">
-            <div
-              className="flex items-center gap-2"
-              onClick={() => window.open(`tel:${ContactData.phone}`, "_blank")}
-            >
-              <FaPhoneVolume /> <p> {ContactData.phone}</p>{" "}
-            </div>
-            <div
-              className="flex items-center gap-2"
-              onClick={() =>
-                window.open(`mailto:${ContactData.gmail}`, "_blank")
-              }
-            >
-              <CiMail />
-              <p>{ContactData.gmail}</p>
-            </div>
-          </div>
-
-          <div className=""></div>
-        </div>
-      </div>
       <div className="bg-white shadow-md h-max">
         <div className=" grid grid-cols-7 w-[1300px] mx-auto items-center ">
           <Link href={`/`} className="h-24 p-1">
@@ -256,6 +233,27 @@ const Header = () => {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+          <div>
+            <div className="flex gap-4 flex-col">
+              <div
+                className="flex items-center gap-2"
+                onClick={() =>
+                  window.open(`tel:${ContactData.phone}`, "_blank")
+                }
+              >
+                <FaPhoneVolume /> <p> {ContactData.phone}</p>{" "}
+              </div>
+              <div
+                className="flex items-center gap-2"
+                onClick={() =>
+                  window.open(`mailto:${ContactData.gmail}`, "_blank")
+                }
+              >
+                <CiMail />
+                <p>{ContactData.gmail}</p>
+              </div>
             </div>
           </div>
         </div>
