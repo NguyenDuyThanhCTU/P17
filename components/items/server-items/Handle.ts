@@ -35,13 +35,12 @@ export const convertToCodeFormat = (text: string) => {
   return textWithoutDiacritics.replace(/\s+/g, "-").toLowerCase();
 };
 
-//convert from list id of product to list product
 export const convertListIdToProduct = (
   listId: string[],
   listProduct: any[]
 ) => {
   let result: any[] = [];
-  listId.forEach((id) => {
+  listId?.forEach((id) => {
     const product = listProduct.find((product) => product.id === id);
     if (product) {
       result.push(product);

@@ -77,6 +77,11 @@ export const IconMapping: IconMappingType = {
   CiViewList: CiViewList,
 };
 
+import paymentAnimation from "./animation/payment.json";
+import policyAnimation from "./animation/policy.json";
+import rulesAnimation from "./animation/rules.json";
+import securityAnimation from "./animation/security.json";
+
 export const ProductSidebarAdmin = [
   {
     name: "Giới thiệu",
@@ -250,7 +255,7 @@ export const SocialMediaCustom = [
 export const HeaderItems = [
   {
     label: "Trang chủ",
-    value: "trang-chu",
+    value: "",
   },
   {
     label: "Sản phẩm",
@@ -346,18 +351,22 @@ export const TypePostItems = [
   {
     label: "Giao nhận hàng",
     value: "giao-nhan-hang",
+    animation: paymentAnimation,
   },
   {
     label: "Chính sách đổi trả",
     value: "chinh-sach-doi-tra",
+    animation: rulesAnimation,
   },
   {
     label: "Chính sách đặt hàng",
     value: "chinh-sach-dat-hang",
+    animation: policyAnimation,
   },
   {
     label: "Chính sách bảo mật",
     value: "chinh-sach-bao-mat",
+    animation: securityAnimation,
   },
   {
     label: "Thông tin nệm Việt Á",

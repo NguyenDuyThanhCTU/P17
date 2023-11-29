@@ -10,6 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
   const { TradeMarkData, productTypes, ContactData, Products } = useData();
+  console.log(ContactData);
   const [search, setSearch] = useState("");
   const [searchRs, setSearchRs] = useState([]);
 

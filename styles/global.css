@@ -6,10 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
- font-family: "SVN-Dancing";
- src: url("../public/Fonts/SVN-Dancing.ttf");
-} */
+
 
 /*<---------------------------------------------------------- Animation ----------------------------------------------------------> */
 .call-animation {

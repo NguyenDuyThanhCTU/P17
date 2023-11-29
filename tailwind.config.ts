@@ -19,6 +19,8 @@ const config: Config = {
         //custom font
         NunitoSans: ["Nunito Sans", "sans-serif"],
         SVNDancing: ["SVN-Dancing", "sans-serif"],
+        UTMAmerican: ["UTMAmerican", "sans-serif"],
+        UTMFleur: ["UTMFleur", "sans-serif"],
       },
 
       colors: {
@@ -33,8 +35,9 @@ const config: Config = {
         BlueFF: "#1A49FF",
         //Custom colors
         maingreen: "#1e7147",
-        mainyellow: "#ff0",
+        mainyellow: "#ffd205",
         mainorange: "#f3b41e",
+        mainblue: "#0F00B6",
       },
 
       // custom
