@@ -35,11 +35,15 @@ const ShortIntro = () => {
           </h3>
           <div className="indent-3 mt-5">
             <p>
-              Giấc ngủ tốt là yếu tố quan trọng giúp chúng ta khởi đầu một ngày
-              mới tràn đầy năng lượng. Và để có một giấc ngủ thực sự thảnh thơi
-              và đầy đủ nghỉ ngơi, việc lựa chọn nệm không chỉ đơn giản là một
-              quyết định mua sắm mà còn là đầu tư vào sức khỏe và sự thoải mái
-              của chính bản thân.
+              Tập thể Công ty TNHH TM Sản Xuất Việt Á đã không ngừng nghiên cứu
+              và sản xuất để đưa ra thị trường những chiếc nệm êm ái nhất, những
+              tấm chăn ấm áp nhất và những sản phẩm chăm sóc giấc ngủ nhằm tạo
+              cho người tiêu dùng sẽ có được những phút giây nghỉ ngơi, thư giãn
+              sau một ngày dài làm việc mệt nhọc. Một sứ mệnh tưởng chừng như
+              đơn giản nhưng chứa đựng cả tâm huyết của người làm nghề, để làm
+              sao khách hàng sở hữu được sản phẩm tốt với giá tốt nhất mà không
+              phải băn khoăn đánh đổi sức khỏe của mình chỉ vì những con số. Đó
+              cũng chính là điểm khác biệt khi đến với công ty TNHH TM Sản Xuấ
             </p>
           </div>
           <Link href={`/gioi-thieu`}>

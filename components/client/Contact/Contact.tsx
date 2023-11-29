@@ -132,10 +132,7 @@ const Contact = () => {
             </div>
           </div>
         ))} */}
-        <h2 className="font-Montserrat text-[32px] font-light ">
-          {" "}
-          Phòng VRS Tàu cao tốc RG
-        </h2>
+        <h2 className="font-Montserrat text-[32px] font-light ">Nệm Việt Á</h2>
         <div className="flex flex-col items-start gap-2">
           <div className="flex items-center gap-2">
             <IoLocationOutline />
@@ -148,7 +145,7 @@ const Contact = () => {
         </div>
         <div>
           <img
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgILC2hs044LQuv9zQW8Yus3ykAYdGkrL-VCoYURF3kLi0CqZq2upFI3LPqRgyaCCpunHWmPPiKoewmoJJ4n_xbCGOT0-CW-ou5OL_xF0lXSS1oM42as_i4wAZ-hl_iJ-0YjtJqqkPd22etKVgMDG7DS5dXvxRSdcUhbWxWqZLQNj1j626URnaT8SAY/s16000/Tau-cao-toc-Trung-Trac-khoi-hanh.JPG"
+            src="https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/z4926494641228_3abe23a121fa2166b6d232162a9ce2f4.jpg?alt=media&token=c289d670-4128-44c8-aea4-d51960905106"
             alt="demo"
             className="shadow-sm shadow-gray-300"
           />

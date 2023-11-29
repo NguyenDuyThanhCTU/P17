@@ -2,9 +2,15 @@ import NewsCategory from "@components/client/News/NewsCategory";
 import { getDataByTypeProps } from "@lib/get-data";
 
 import moment from "moment";
+import { Metadata } from "next";
 
 import React from "react";
 import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
+
+export const metadata: Metadata = {
+  title: "CÔNG TY TNHH THƯƠNG MẠI SẢN XUẤT VIỆT Á",
+  description: "CÔNG TY TNHH THƯƠNG MẠI SẢN XUẤT VIỆT Á ",
+};
 
 const NewsDetailPage = async ({ params }: { params: { news: string } }) => {
   const Data = await getDataByTypeProps("posts", "url", params.news);

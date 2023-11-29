@@ -38,7 +38,7 @@ const DisplayProduct = ({ Data, Topic }: any) => {
           )
         )}
         <div className="d:col-span-4 p:col-span-5 grid p:grid-cols-2 d:grid-cols-4 gap-5">
-          {Data.slice(0, 8).map((item: any, idx: number) => (
+          {Data?.slice(0, 8).map((item: any, idx: number) => (
             <div key={idx}>
               <ProductCard Data={item} />
             </div>

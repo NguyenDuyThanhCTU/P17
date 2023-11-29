@@ -20,24 +20,19 @@ import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
 import { TypeProductItems, TypeProductItems2 } from "@assets/item";
 
 const AddProduct = ({}) => {
-  const [imageUrl, setImageUrl] = useState<string | undefined>();
-  const [Title, setTitle] = useState<any>();
-  const [titleUrl, setTitleUrl] = useState<string | undefined>();
-  const [Price, setPrice] = useState<string | undefined>();
-  const [Content, setContent] = useState<string | undefined>();
+  const [imageUrl, setImageUrl] = useState<string>("");
+  const [Title, setTitle] = useState<any>("");
+  const [titleUrl, setTitleUrl] = useState<string>("");
+  const [Content, setContent] = useState<string>("");
   const [describe, setDescribe] = useState("");
-  const [isType, setIsType] = useState<any>();
+  const [isType, setIsType] = useState<any>("");
   const [isParent, setIsParent] = useState("");
-  const [isChildren, setIsChildren] = useState<any>();
-  const [typeUrl, setTypeUrl] = useState<string | undefined>();
-  const [parentUrl, setParentUrl] = useState<string | undefined>();
+  const [isChildren, setIsChildren] = useState<any>("");
+  const [typeUrl, setTypeUrl] = useState<string>("");
+  const [parentUrl, setParentUrl] = useState<string>("");
   const [ListSubImage, setListSubImage] = useState<any>([]);
-  const [isParent2, setIsParent2] = useState<any>();
-  const [parent2Url, setParent2Url] = useState<any>();
-  const [ProductFunction, setProductFunction] = useState<any>();
-  const [ProductFunctionUrl, setProductFunctionUrl] = useState<any>();
-  const [ProductPrice, setProductPrice] = useState<any>();
-  const [ProductPriceUrl, setProductPriceUrl] = useState<any>();
+  const [isParent2, setIsParent2] = useState<any>("");
+  const [parent2Url, setParent2Url] = useState<any>("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setDropDown, setIsRefetch } = useStateProvider();
   const { productTypes } = useData();
@@ -46,19 +41,33 @@ const AddProduct = ({}) => {
   const { Option } = Select;
   const [tableData, setTableData] = useState([
     ["Size", "1mx2m", "1m2x2m", "1m4x2m", "1m6x2m", "1m8x2m"],
-    ["Size", "5cm", "10cm", "15cm", "20cm", ""],
-    ["", "", "", "", "", ""],
-    ["", "", "", "", "", ""],
-    ["", "", "", "", "", ""],
-    ["", "", "", "", "", ""],
+    ["5cm", "", "", "", "", ""],
+    ["10cm", "", "", "", "", ""],
+    ["15cm", "", "", "", "", ""],
+    ["20cm", "", "", "", "", ""],
   ]);
   const handleInputChange = (rowIndex: any, colIndex: any, event: any) => {
-    if (rowIndex > 1) {
-      const newData = [...tableData];
-      newData[rowIndex][colIndex] = event.target.value;
-      setTableData(newData);
-    }
+    const newData = [...tableData];
+    newData[rowIndex][colIndex] = event.target.value;
+    setTableData(newData);
   };
+
+  const convertedData = tableData
+
+    .map((row) => {
+      const obj: any = {};
+      tableData[0].forEach((header, index) => {
+        if (header === "Size") {
+          obj[header] = row[0];
+        } else {
+          obj[header] = row[index];
+        }
+      });
+      return obj;
+    })
+
+    .filter(Boolean); // Loại bỏ các giá trị undefined (ở hàng đầu tiên) ra khỏi mảng kết quả
+
   const initial1 =
     "<p>Chất liệu: </p> <br/> <p>Màu sắc: </p> <br/> <p>Size: </p> <br/> <p>Chiều dài: </p> <br/> <p>Chiều rộng: </p> <br/> <p>Chiều cao: </p> <br/> <p>Trọng lượng: </p> <br/> <p>Thương hiệu: </p> <br/> <p>Xuất xứ: </p> <br/> <p>Chất liệu";
   const initDescribe = "<p> mô tả sản phẩm </p>";
@@ -86,11 +95,11 @@ const AddProduct = ({}) => {
     };
     handleChange();
   }, [isType, isParent, isChildren, Title, isParent2]);
-
+  console.log(convertedData);
   const handleDiscard = () => {
     setTitle("");
     setTitleUrl("");
-    setPrice("");
+
     setContent("");
     setDescribe("");
     setIsType("");
@@ -113,7 +122,7 @@ const AddProduct = ({}) => {
         title: Title,
         content: Content,
         describe: describe,
-        price: Price,
+        price: convertedData,
         image: imageUrl,
         type: isType,
         typeUrl: typeUrl,
@@ -129,14 +138,15 @@ const AddProduct = ({}) => {
         },
         access: Math.floor(Math.random() * (10000 - 100 + 1)) + 100,
         subimage: ListSubImage,
-        function: ProductFunction,
-        functionUrl: ProductFunctionUrl,
-        priceSegmentUrl: ProductPriceUrl,
-        priceSegment: ProductPrice,
       };
-
+      console.log(data);
       for (let key in data) {
-        if (data[key] === undefined || data[key] === "") {
+        if (
+          data[key] === undefined ||
+          data[key] === "" ||
+          data[key] === null ||
+          data[key] === undefined
+        ) {
           delete data[key];
         }
       }
@@ -255,7 +265,7 @@ const AddProduct = ({}) => {
                 </div>
               </div>
               <div className="">
-                <label>Mô tả sản phẩm</label>
+                <label>Bảng giá sản phẩm</label>
                 <div
                   className="bg-gray-400   text-white  hover:bg-red-600 duration-300 mt-2 py-3 text-center hover:text-white cursor-pointer"
                   onClick={() => setIsModalOpen(true)}
@@ -389,25 +399,48 @@ const AddProduct = ({}) => {
           open={isModalOpen}
           width={800}
           onCancel={() => setIsModalOpen(false)}
+          footer={false}
         >
-          <div className="flex flex-col items-center">
-            <table className="border-collapse border-2 border-gray-500">
+          <div className="overflow-x-auto">
+            <table className="min-w-full">
               <tbody>
                 {tableData.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
+                  <tr key={`row-${rowIndex}`}>
                     {row.map((cell, colIndex) => (
-                      <td key={colIndex} className="border border-gray-400">
-                        <input
-                          type="text"
-                          value={cell}
-                          onChange={(event) =>
-                            handleInputChange(rowIndex, colIndex, event)
-                          }
-                          className={`w-20 p-1 ${
-                            rowIndex === 0 || colIndex === 0 ? "font-bold" : ""
-                          }`}
-                          readOnly={rowIndex <= 1 || colIndex === 0}
-                        />
+                      <td
+                        key={`cell-${rowIndex}-${colIndex}`}
+                        className="border px-4 py-2"
+                      >
+                        {colIndex !== 0 ? (
+                          <input
+                            type="text"
+                            value={cell}
+                            onChange={(e) =>
+                              handleInputChange(rowIndex, colIndex, e)
+                            }
+                            className="w-full"
+                          />
+                        ) : (
+                          <span>{cell}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full">
+              <tbody>
+                {tableData.map((row, rowIndex) => (
+                  <tr key={`row-${rowIndex}`}>
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={`cell-${rowIndex}-${colIndex}`}
+                        className="border px-4 py-2"
+                      >
+                        {cell}
                       </td>
                     ))}
                   </tr>

@@ -7,7 +7,7 @@ export default function ContactLayout({
     <>
       <div>
         <img
-          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgILC2hs044LQuv9zQW8Yus3ykAYdGkrL-VCoYURF3kLi0CqZq2upFI3LPqRgyaCCpunHWmPPiKoewmoJJ4n_xbCGOT0-CW-ou5OL_xF0lXSS1oM42as_i4wAZ-hl_iJ-0YjtJqqkPd22etKVgMDG7DS5dXvxRSdcUhbWxWqZLQNj1j626URnaT8SAY/s16000/Tau-cao-toc-Trung-Trac-khoi-hanh.JPG"
+          src="https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/z4926767619136_7147287537042aa2aaa5a3ab2efa81ad.jpg?alt=media&token=5ef8e8fc-e193-409f-be81-92e0d84506ba"
           alt="Introduce Header"
           className="w-[100vw] h-[700px] object-cover"
         />

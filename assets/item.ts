@@ -325,20 +325,20 @@ export const TypeProductItems = [
 
 export const TypeProductItems2 = [
   {
-    label: "Thực Phẩm Sạch Hot",
-    value: "thuc-pham-sach-hot",
+    label: "Sản phẩm khuyến mãi",
+    value: "san-pham-khuyen-mai",
   },
   {
-    label: "Hải Sản Hot",
-    value: "hai-san-hot",
+    label: "Sản phẩm bán chạy",
+    value: "san-pham-ban-chay",
   },
   {
-    label: "Hoa Quả Hot",
-    value: "hoa-qua-hot",
+    label: "Sản phẩm mới",
+    value: "san-pham-moi",
   },
   {
-    label: "Thịt Đặc sản",
-    value: "thit-dac-san",
+    label: "Sản phẩm nổi bật",
+    value: "san-pham-noi-bat",
   },
 ];
 

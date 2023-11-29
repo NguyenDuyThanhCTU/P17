@@ -2,6 +2,7 @@
 import { HeaderItems, TypeProductItems } from "@assets/item";
 import { useData } from "@context/DataProviders";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { AiFillCaretRight, AiOutlineDown } from "react-icons/ai";
 import { CiMail } from "react-icons/ci";
@@ -34,6 +35,12 @@ const Header = () => {
     );
     setSearchRs(sort);
   }, [Products, search]);
+
+  const router = useRouter();
+  const HandleSearch = () => {
+    router.push(`/san-pham?search=${search}`);
+    setSearch("");
+  };
   return (
     <div className="d:block fixed z-50 w-full top-0 p:hidden">
       <div className="bg-white shadow-md h-max">
@@ -69,21 +76,24 @@ const Header = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-orange-500 py-3 px-6 text-white rounded-r-full cursor-pointer">
+                  <div
+                    className="bg-orange-500 py-3 px-6 text-white rounded-r-full cursor-pointer"
+                    onClick={() => HandleSearch()}
+                  >
                     <FaSearch />
                   </div>
                 </div>
                 {search && (
-                  <div className="absolute w-full bg-gray-50 top-full flex flex-col shadow-inner z-50 mt-2">
+                  <div className="absolute w-full bg-blue-100 top-full flex flex-col shadow-inner z-50 mt-2">
                     <div className=" flex flex-col">
                       {searchRs.map((product: any, idx: number) => (
-                        <Link
-                          href={`/chi-tiet-san-pham/${product.url}`}
+                        <div
+                          onClick={() => HandleSearch()}
                           key={idx}
-                          className="cursor-pointer p-2 hover:bg-gray-100"
+                          className="cursor-pointer p-2 hover:bg-blue-200"
                         >
                           {product.title}
-                        </Link>
+                        </div>
                       ))}
                     </div>
                   </div>

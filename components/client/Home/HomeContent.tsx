@@ -9,20 +9,25 @@ import DisplayProduct from "../Product/DisplayProduct";
 const HomeContent = ({ Data }: any) => {
   const { TradeMarkData, Slides, Videos } = useData();
 
-  const feshFood = Data.filter(
-    (item: any) =>
-      item.parent2 === "Thực Phẩm Sạch Hot" || item.parent2 === undefined
+  const newProducts = Data.filter(
+    (item: any) => item.parent2 === "Sản phẩm mới"
   );
-  const seafood = Data.filter((item: any) => item.parent2 === "Hải Sản Hot");
-  const fruit = Data.filter((item: any) => item.parent2 === "Hoa Quả Hot");
-  const meat = Data.filter((item: any) => item.parent2 === "Thịt Đặc sản");
+  const hotProducts = Data.filter(
+    (item: any) => item.parent2 === "Sản phẩm nổi bật"
+  );
+  const saleProducts = Data.filter(
+    (item: any) => item.parent2 === "Sản phẩm khuyến mãi"
+  );
+  const bestSellerProducts = Data.filter(
+    (item: any) => item.parent2 === "Sản phẩm bán chạy"
+  );
 
   return (
     <div className="flex flex-col bg-white">
-      <DisplayProduct Data={fruit} Topic="Sản phẩm khuyến mãi" />
-      <DisplayProduct Data={seafood} Topic="Sản phẩm bán chạy" />
-      <DisplayProduct Data={fruit} Topic="Sản phẩm mới" />
-      <DisplayProduct Data={feshFood} Topic="Sản phẩm nổi bật" />
+      <DisplayProduct Data={saleProducts} Topic="Sản phẩm khuyến mãi" />
+      <DisplayProduct Data={bestSellerProducts} Topic="Sản phẩm bán chạy" />
+      <DisplayProduct Data={newProducts} Topic="Sản phẩm mới" />
+      <DisplayProduct Data={hotProducts} Topic="Sản phẩm nổi bật" />
     </div>
   );
 };

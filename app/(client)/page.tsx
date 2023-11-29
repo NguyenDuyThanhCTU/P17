@@ -11,8 +11,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Trang chủ",
-  description: "LachMarket",
+  title: "CÔNG TY TNHH THƯƠNG MẠI SẢN XUẤT VIỆT Á",
+  description: "CÔNG TY TNHH THƯƠNG MẠI SẢN XUẤT VIỆT Á ",
 };
 
 const HomePage = async () => {
