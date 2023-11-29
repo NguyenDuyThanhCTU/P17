@@ -1,4 +1,5 @@
 import Category from "@components/client/Home/Category";
+import HomeContent from "@components/client/Home/HomeContent";
 import HomeNews from "@components/client/Home/HomeNews";
 import HomePolicy from "@components/client/Home/HomePolicy";
 import HomeVideo from "@components/client/Home/HomeVideo";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   const Data = await getDataByTypeProps("posts", "topic", "Tin tức");
-
+  const ProductData = await getAllDataProps("products");
   return (
     <div>
       <div className="w-[1400px] mx-auto">
@@ -24,8 +25,9 @@ const HomePage = async () => {
         <ShortIntro />
       </div>
       <Sale />
-      <div className="bg-cover bg-bottom bg-fixed bg-[url(https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/z4926213403877_09799ed7eb1778ec9ef0fb61558b60eb.jpg?alt=media&token=ffccfc58-f945-4712-9692-159a43123859)]">
+      <div className="w-[1400px] mx-auto bg-cover bg-bottom bg-fixed bg-[url(https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/z4926213403877_09799ed7eb1778ec9ef0fb61558b60eb.jpg?alt=media&token=ffccfc58-f945-4712-9692-159a43123859)]">
         <div className="bg-fixed bg-[rgba(255,255,255,0.71)]">
+          <HomeContent Data={ProductData} />
           <HomeNews Data={Data} />
           <HomeVideo />
           <HomePolicy />

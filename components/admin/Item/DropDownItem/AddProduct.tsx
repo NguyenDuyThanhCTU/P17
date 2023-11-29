@@ -6,7 +6,7 @@ import {
   AiOutlineDelete,
   AiOutlinePlus,
 } from "react-icons/ai";
-import { Drawer, Form, Select, Space, Upload, notification } from "antd";
+import { Drawer, Form, Modal, Select, Space, Upload, notification } from "antd";
 import Input from "../Input";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
@@ -38,13 +38,27 @@ const AddProduct = ({}) => {
   const [ProductFunctionUrl, setProductFunctionUrl] = useState<any>();
   const [ProductPrice, setProductPrice] = useState<any>();
   const [ProductPriceUrl, setProductPriceUrl] = useState<any>();
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { setDropDown, setIsRefetch } = useStateProvider();
   const { productTypes } = useData();
   const [open, setOpen] = useState(false);
   const [openDescription, setOpenDescription] = useState(false);
   const { Option } = Select;
-
+  const [tableData, setTableData] = useState([
+    ["Size", "1mx2m", "1m2x2m", "1m4x2m", "1m6x2m", "1m8x2m"],
+    ["Size", "5cm", "10cm", "15cm", "20cm", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+  ]);
+  const handleInputChange = (rowIndex: any, colIndex: any, event: any) => {
+    if (rowIndex > 1) {
+      const newData = [...tableData];
+      newData[rowIndex][colIndex] = event.target.value;
+      setTableData(newData);
+    }
+  };
   const initial1 =
     "<p>Chất liệu: </p> <br/> <p>Màu sắc: </p> <br/> <p>Size: </p> <br/> <p>Chiều dài: </p> <br/> <p>Chiều rộng: </p> <br/> <p>Chiều cao: </p> <br/> <p>Trọng lượng: </p> <br/> <p>Thương hiệu: </p> <br/> <p>Xuất xứ: </p> <br/> <p>Chất liệu";
   const initDescribe = "<p> mô tả sản phẩm </p>";
@@ -225,7 +239,7 @@ const AddProduct = ({}) => {
               <div className="">
                 <label>Thông tin sản phẩm</label>
                 <div
-                  className="bg-red-400 hover:bg-red-600 duration-300 mt-2 py-3 text-center hover:text-white cursor-pointer"
+                  className="bg-gray-400  text-white  hover:bg-red-600 duration-300 mt-2 py-3 text-center hover:text-white cursor-pointer"
                   onClick={() => setOpen(true)}
                 >
                   Thêm thông tin sản phẩm
@@ -234,10 +248,19 @@ const AddProduct = ({}) => {
               <div className="">
                 <label>Mô tả sản phẩm</label>
                 <div
-                  className="bg-red-400 hover:bg-red-600 duration-300 mt-2 py-3 text-center hover:text-white cursor-pointer"
+                  className="bg-gray-400  text-white  hover:bg-red-600 duration-300 mt-2 py-3 text-center hover:text-white cursor-pointer"
                   onClick={() => setOpenDescription(true)}
                 >
                   Thêm mô tả sản phẩm
+                </div>
+              </div>
+              <div className="">
+                <label>Mô tả sản phẩm</label>
+                <div
+                  className="bg-gray-400   text-white  hover:bg-red-600 duration-300 mt-2 py-3 text-center hover:text-white cursor-pointer"
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  Bảng giá sản phẩm
                 </div>
               </div>
               <Form.Item label="Ảnh phụ">
@@ -359,6 +382,40 @@ const AddProduct = ({}) => {
         >
           <TextEditor onChange={setDescribe} initialValue={initDescribe} />
         </Drawer>
+      </>
+      <>
+        <Modal
+          title="Cập nhật bảng giá sản phẩm"
+          open={isModalOpen}
+          width={800}
+          onCancel={() => setIsModalOpen(false)}
+        >
+          <div className="flex flex-col items-center">
+            <table className="border-collapse border-2 border-gray-500">
+              <tbody>
+                {tableData.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {row.map((cell, colIndex) => (
+                      <td key={colIndex} className="border border-gray-400">
+                        <input
+                          type="text"
+                          value={cell}
+                          onChange={(event) =>
+                            handleInputChange(rowIndex, colIndex, event)
+                          }
+                          className={`w-20 p-1 ${
+                            rowIndex === 0 || colIndex === 0 ? "font-bold" : ""
+                          }`}
+                          readOnly={rowIndex <= 1 || colIndex === 0}
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Modal>
       </>
     </div>
   );

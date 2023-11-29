@@ -12,6 +12,7 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
     <div className="font-LexendDeca font-extralight">
       <Header />
       <div className="mt-[170px]">{children}</div>
+
       <TopFooter />
       <Footer />
     </div>
