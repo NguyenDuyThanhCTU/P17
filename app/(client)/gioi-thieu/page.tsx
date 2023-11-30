@@ -1,4 +1,4 @@
-import { getDataByTypeProps } from "@lib/get-data";
+import { getAllDataProps } from "@lib/get-data";
 import { Metadata } from "next";
 import React from "react";
 
@@ -8,12 +8,8 @@ export const metadata: Metadata = {
 };
 
 const IntroductionPage = async () => {
-  const Data = await getDataByTypeProps(
-    "posts",
-    "topic",
-    "Thông tin nệm Việt Á"
-  );
-  const markup = { __html: Data[0]?.content };
+const Data:any = getAllDataProps("website")
+  const markup = { __html: Data[1]?.content };
   return (
     <div>
       <div className="d:w-[1400px] d:mx-auto p:w-auto p:mx-2">
