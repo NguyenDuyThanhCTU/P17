@@ -8,7 +8,7 @@ const HomePolicy = () => {
   return (
     <div className="py-20">
       <div className="d:w-[1440px] p:w-auto mx-auto">
-        <div className="flex justify-between">
+        <div className="flex justify-between d:flex-row p:flex-col d:gap-0 p:gap-10">
           {TypePostItems.slice(1, 5).map((item, index) => (
             <Link
               href={`/bai-viet/${item.value}`}

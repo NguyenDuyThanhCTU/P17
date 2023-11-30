@@ -22,7 +22,7 @@ const IntroductionPage = async ({
 
   return (
     <div>
-      <div className="p:w-auto d:w-[1470px] p:mx-2 d:mx-auto grid p:grid-cols-1 d:grid-cols-5 gap-10 py-10">
+      <div className="d:w-[1400px] d:mx-auto p:w-auto p:mx-2 grid p:grid-cols-1 d:grid-cols-5 gap-10 py-10">
         <div className="flex flex-col gap-5">
           <div className="border h-max border-gray-400">
             <PostCategory />

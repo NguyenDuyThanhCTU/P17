@@ -16,7 +16,7 @@ const IntroductionPage = async () => {
   const markup = { __html: Data[0]?.content };
   return (
     <div>
-      <div className="w-[1300px] mx-auto">
+      <div className="d:w-[1400px] d:mx-auto p:w-auto p:mx-2">
         <h1 className="text-[30px] text-center font-normal py-10">
           Giới thiệu về nệm Việt Á
         </h1>

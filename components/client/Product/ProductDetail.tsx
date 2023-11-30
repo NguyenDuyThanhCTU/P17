@@ -60,7 +60,7 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
   ];
 
   return (
-    <div className="flex flex-col gap-5  d:w-[1300px] d:mx-auto p:w-auto p:mx-2 py-14">
+    <div className="flex flex-col gap-5  d:w-[1400px] d:mx-auto p:w-auto p:mx-2 py-14">
       <div>
         <div className="grid p:grid-cols-1 d:grid-cols-2 d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2 pb-14">
           <div className=" rounded-lg d:h-max p:h-auto overflow-hidden">
@@ -116,7 +116,7 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
             <div>
               Bảng giá:
               <div className="mt-2">
-                <div className="">
+                <div className="overflow-x-auto ">
                   <table className="min-w-full">
                     <tbody>
                       {formattedTable.map((row: any, rowIndex: any) => (

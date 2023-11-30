@@ -430,7 +430,7 @@ const AddProduct = ({}) => {
               </tbody>
             </table>
           </div>
-          <div className="overflow-x-auto">
+          {/* <div className="overflow-x-auto">
             <table className="min-w-full">
               <tbody>
                 {tableData.map((row, rowIndex) => (
@@ -447,7 +447,7 @@ const AddProduct = ({}) => {
                 ))}
               </tbody>
             </table>
-          </div>
+          </div> */}
         </Modal>
       </>
     </div>

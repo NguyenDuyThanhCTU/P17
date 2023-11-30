@@ -29,12 +29,12 @@ const DisplayProductPage = async ({
       {Object.keys(searchParams).length !== 0 ? (
         <>
           <div className="w-full mt-4 py-5 bg-gray-300">
-            <div className=" w-[1400px] mx-auto">
+            <div className=" d:w-[1400px] d:mx-auto p:w-auto p:mx-2">
               Kết quả tìm kiếm cho từ khóa: "
               <span className="font-bold">{searchParamsValue}</span>"
             </div>
           </div>
-          <div className="w-[1400px] mx-auto">
+          <div className="d:w-[1400px] d:mx-auto p:w-auto p:mx-2">
             <Product
               Data={Data}
               topic={`Tất cả sản phẩm "${searchParamsValue}"`}
@@ -42,7 +42,7 @@ const DisplayProductPage = async ({
           </div>
         </>
       ) : (
-        <div className="w-[1400px] mx-auto">
+        <div className="d:w-[1400px] d:mx-auto p:w-auto p:mx-2">
           <Product Data={Data} topic="Tất cả sản phẩm" />
         </div>
       )}

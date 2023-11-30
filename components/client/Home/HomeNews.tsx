@@ -24,7 +24,7 @@ const HomeNews = ({ Data }: any) => {
             </div>
           </div>
         </div>
-        <div className="flex gap-2 mt-6">
+        <div className="flex gap-4 mt-6 d:flex-row p:flex-col ">
           <div className="flex-1">
             <div className="overflow-hidden cursor-pointer">
               <img

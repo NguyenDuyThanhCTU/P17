@@ -16,7 +16,7 @@ const ShortIntro = () => {
   return (
     <div>
       {" "}
-      <div className="flex gap-2 py-5 px-5 d:flex-row p:flex-col">
+      <div className="flex gap-2 py-5 p:px-0 d:px-5 d:flex-row p:flex-col">
         <div className=" flex-[45%] h-[500px]">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/z4926213423129_60764889b887dc10fde5ab3019538769.jpg?alt=media&token=6328da6b-9e6a-4c3d-a618-54290e562f79"
@@ -24,7 +24,7 @@ const ShortIntro = () => {
             className="w-full h-full object-contain"
           />
         </div>
-        <div className=" flex-[55%] px-10">
+        <div className=" flex-[55%] p:px-0 d:px-10">
           <h3 className={`font-UTMFleur text-[40px] ${UTMFleur.className}`}>
             Giới thiệu
           </h3>

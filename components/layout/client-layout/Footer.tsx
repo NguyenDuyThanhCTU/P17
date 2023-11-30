@@ -18,7 +18,7 @@ const Footer = () => {
       setIsOption(idx);
     }
   };
-  console.log(Branches);
+
   return (
     <div>
       <div className="p:w-auto p:mx-2 d:w-[1400px] d:mx-auto grid p:grid-cols-1   d:grid-cols-4 gap-3 py-14">
@@ -51,10 +51,10 @@ const Footer = () => {
           <div className="flex flex-col mt-3">
             {Branches.map((items: any, idx: number) => (
               <div key={idx} className="group">
-                <h2 className="pb-1 border-b w-full font-normal cursor-pointer">
+                <h2 className="py-2 border-b w-full font-normal cursor-pointer">
                   {items.name}
                 </h2>
-                <div className="text-[14px]  flex-col gap-1 py-2 hidden group-hover:flex">
+                <div className="text-[14px]  flex-col gap-1 py-2 p:flex d:hidden group-hover:flex">
                   <p>
                     {" "}
                     <span className="underline">Địa chỉ:</span>{" "}
