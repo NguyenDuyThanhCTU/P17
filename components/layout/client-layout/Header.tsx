@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <>
       <div className="d:block fixed z-50 w-full top-0 p:hidden">
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white">
           <div className="grid grid-cols-5 gap-10 items-center d:w-[1400px] mx-auto p:w-auto">
             <Link href={`/`} className=" p-1 h-[70px] ">
               <img
