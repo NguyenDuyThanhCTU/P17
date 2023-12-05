@@ -5,29 +5,33 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import DisplayProduct from "../Product/DisplayProduct";
+import { TypeProductItems } from "@assets/item";
 
 const HomeContent = ({ Data }: any) => {
-  const { TradeMarkData, Slides, Videos } = useData();
-
-  const newProducts = Data.filter(
-    (item: any) => item.parent2 === "Sản phẩm mới"
-  );
-  const hotProducts = Data.filter(
-    (item: any) => item.parent2 === "Sản phẩm nổi bật"
-  );
-  const saleProducts = Data.filter(
-    (item: any) => item.parent2 === "Sản phẩm khuyến mãi"
-  );
-  const bestSellerProducts = Data.filter(
-    (item: any) => item.parent2 === "Sản phẩm bán chạy"
-  );
-
+  const { TradeMarkData, Slides, Videos, productTypes } = useData();
+  const DrapProduct = Data.filter((product: any) => product.parent === "Drap");
+  const Product1 = Data.filter((product: any) => product.parent === "Gối");
+  const Product2 = Data.filter((product: any) => product.parent === "Phụ kiện");
+  console.log(Data);
   return (
     <div className="flex flex-col bg-white">
-      <DisplayProduct Data={saleProducts} Topic="Sản phẩm khuyến mãi" />
+      {productTypes?.map((item: any, idx: number) => {
+        const sortProduct = Data.filter(
+          (product: any) => product.type === item.type
+        );
+        return (
+          <div key={idx}>
+            <DisplayProduct Data={sortProduct} Topic={item.type} />
+          </div>
+        );
+      })}{" "}
+      <DisplayProduct Data={DrapProduct} Topic="Drap" />
+      <DisplayProduct Data={Product1} Topic="Gối" />
+      <DisplayProduct Data={Product2} Topic="Phụ kiện" />
+      {/* <DisplayProduct Data={saleProducts} Topic="Sản phẩm khuyến mãi" />
       <DisplayProduct Data={bestSellerProducts} Topic="Sản phẩm bán chạy" />
       <DisplayProduct Data={newProducts} Topic="Sản phẩm mới" />
-      <DisplayProduct Data={hotProducts} Topic="Sản phẩm nổi bật" />
+      <DisplayProduct Data={hotProducts} Topic="Sản phẩm nổi bật" /> */}
     </div>
   );
 };

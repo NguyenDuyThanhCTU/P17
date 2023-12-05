@@ -104,7 +104,7 @@ const ListProducts: React.FC = () => {
           placement="right"
           onClose={() => setOpen(false)}
           open={open}
-          width={800}
+          width={1000}
         >
           <EditProduct />
         </Drawer>

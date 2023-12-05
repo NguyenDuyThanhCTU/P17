@@ -50,7 +50,7 @@ const Header = () => {
     <>
       <div className="d:block fixed z-50 w-full top-0 p:hidden">
         <div className="flex flex-col bg-white">
-          <div className="grid grid-cols-5 gap-10 items-center d:w-[1400px] mx-auto p:w-auto">
+          <div className="flex justify-between gap-10 items-center d:w-[1400px] mx-auto p:w-auto">
             <Link href={`/`} className=" p-1 h-[70px] ">
               <img
                 src={TradeMarkData.websiteLogo}
@@ -104,25 +104,36 @@ const Header = () => {
               )}
             </div>
             <div className="col-span-2 flex justify-center">
-              <div className="flex gap-2 flex-col">
+              <div className="w-full bg-mainblue py-2 px-4 text-white uppercase font-bold text-[22px]">
+                Hotline: {ContactData.phone}
+              </div>
+              {/* <div className="flex gap-2 ">
                 <div
-                  className="flex items-center gap-2"
-                  onClick={() =>
-                    window.open(`tel:${ContactData.phone}`, "_blank")
-                  }
-                >
-                  <FaPhoneVolume /> <p> {ContactData.phone}</p>{" "}
-                </div>
-                <div
-                  className="flex items-center gap-2 w-max"
+                  className="flex items-center gap-2 w-max "
                   onClick={() =>
                     window.open(`mailto:${ContactData.gmail}`, "_blank")
                   }
                 >
                   <CiMail />
-                  <p>{ContactData.gmail}</p>
+                  <p className="border-r px-2">{ContactData.gmail}</p>
                 </div>
-              </div>
+                <div
+                  className=" "
+                  onClick={() =>
+                    window.open(`tel:${ContactData.phone}`, "_blank")
+                  }
+                >
+                  <div className="flex  flex-col px-2">
+                    <div className="flex items-center gap-2">
+                      <FaPhoneVolume />
+                      Hotline:{" "}
+                      <span className="text-redPrimmary font-normal">
+                        {ContactData.phone}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
             </div>
           </div>
           <div className="bg-mainblue">

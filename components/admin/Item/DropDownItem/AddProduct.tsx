@@ -53,7 +53,6 @@ const AddProduct = ({}) => {
   };
 
   const convertedData = tableData
-
     .map((row) => {
       const obj: any = {};
       tableData[0].forEach((header, index) => {
@@ -95,7 +94,6 @@ const AddProduct = ({}) => {
     };
     handleChange();
   }, [isType, isParent, isChildren, Title, isParent2]);
-  console.log(convertedData);
   const handleDiscard = () => {
     setTitle("");
     setTitleUrl("");
@@ -132,10 +130,9 @@ const AddProduct = ({}) => {
         parent2Url: parent2Url,
         state: "Còn hàng",
         url: titleUrl,
-        sale: {
-          discount: 0,
-          newPrice: "0",
-        },
+        discount: 0,
+        newPrice: "",
+
         access: Math.floor(Math.random() * (10000 - 100 + 1)) + 100,
         subimage: ListSubImage,
       };
