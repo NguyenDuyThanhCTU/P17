@@ -88,12 +88,12 @@ const TimeSale = () => {
           <>
             <p>KẾT THÚC SAU:</p>
             <div className=" font-bold ml-2 flex gap-2 font-LexendDeca">
-              <span className="bg-mainred px-1 text-white">{days} Ngày</span>
-              <span className="bg-mainred px-1 text-white">{hours}</span>
+              <span className="bg-mainblue px-1 text-white">{days} Ngày</span>
+              <span className="bg-mainblue px-1 text-white">{hours}</span>
               <span>:</span>
-              <span className="bg-mainred px-1 text-white">{minutes}</span>
+              <span className="bg-mainblue px-1 text-white">{minutes}</span>
               <span>:</span>
-              <span className="bg-mainred px-1 text-white">{seconds}</span>
+              <span className="bg-mainblue px-1 text-white">{seconds}</span>
             </div>
           </>
         )}

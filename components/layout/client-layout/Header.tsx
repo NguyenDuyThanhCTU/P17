@@ -17,9 +17,9 @@ const Header = () => {
   const [search, setSearch] = useState("");
   const [searchRs, setSearchRs] = useState([]);
   const [openSearchMB, setOpenSearchMB] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [openTypeMB, setOpenTypeMB] = useState(0);
 
+  const [openTypeMB, setOpenTypeMB] = useState(0);
+  const [open, setOpen] = useState(false);
   const IntroductionItems = [
     {
       label: "Thông tin nệm Việt Á",

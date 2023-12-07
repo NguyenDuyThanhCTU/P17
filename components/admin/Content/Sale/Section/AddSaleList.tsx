@@ -79,7 +79,7 @@ const AddSaleList: React.FC = () => {
 
       <>
         <Modal
-          title="Thông tin SALE"
+          // title=""
           open={open}
           onCancel={() => setOpen(false)}
           footer={false}

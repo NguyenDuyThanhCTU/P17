@@ -218,14 +218,18 @@ const Sale: React.FC = () => {
   };
 
   const data: DataType[] = cartProducts.map((product: any, idx: number) => {
+    let defineNewPrice: any = 0;
+    if (product.newPrice !== undefined) {
+      defineNewPrice = product.newPrice[1]["1mx2m"];
+    }
     return {
       id: product.id,
       index: idx,
       title: product.title,
       image: product.image,
-      price: product.price,
-      newPrice: product.sale.newPrice,
-      discount: `${product.sale.discount}%`,
+      price: product.price[1]["1mx2m"],
+      newPrice: defineNewPrice,
+      discount: `${product.discount}%`,
     };
   });
 

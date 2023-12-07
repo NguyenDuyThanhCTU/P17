@@ -56,7 +56,7 @@ const Slide = () => {
         </div>
         <div className="w-full h-full">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/Untitled-1.png?alt=media&token=e05f2f93-0148-4276-98ce-29419bd1b401"
+            src="https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/GIAO%20H%C3%80NG%20NHANH%202.png?alt=media&token=b357b68a-32e2-4d0c-a905-731809825324"
             alt="slide2"
             className="w-full"
           />
