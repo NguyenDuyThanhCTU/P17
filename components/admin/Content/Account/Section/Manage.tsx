@@ -296,9 +296,7 @@ const Manage = () => {
     filters,
     sorter,
     extra
-  ) => {
-    console.log("params", pagination, filters, sorter, extra);
-  };
+  ) => {};
 
   const formatter = (value: any) => <CountUp end={value} />;
 

@@ -213,9 +213,7 @@ const Sale: React.FC = () => {
     filters,
     sorter,
     extra
-  ) => {
-    console.log("params", pagination, filters, sorter, extra);
-  };
+  ) => {};
 
   const data: DataType[] = cartProducts.map((product: any, idx: number) => {
     let defineNewPrice: any = 0;

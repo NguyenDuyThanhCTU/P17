@@ -15,7 +15,6 @@ const ProductCard = ({ Data }: any) => {
 
   // remove .00 in newPrice
 
-  console.log(newPrice);
   return (
     <Link href={`/chi-tiet-san-pham/${Data.url}`} className="">
       {Data.discount === undefined ? (

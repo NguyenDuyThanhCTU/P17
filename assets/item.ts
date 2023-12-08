@@ -258,20 +258,32 @@ export const HeaderItems = [
     value: "",
   },
   {
-    label: "Sản phẩm",
-    value: "san-pham",
+    label: "Nệm cao su",
+    value: "san-pham/nem-cao-su",
   },
   {
-    label: "Giới thiệu",
-    value: "gioi-thieu",
+    label: "Nem Foam",
+    value: "san-pham/nem-foam",
   },
   {
-    label: "Tin tức",
-    value: "tin-tuc",
+    label: "Nệm lò xo",
+    value: "san-pham/nem-lo-xo",
   },
   {
-    label: "Liên hệ",
-    value: "lien-he",
+    label: "Nệm bông ép",
+    value: "san-pham/nem-bong-ep",
+  },
+  {
+    label: "Drap",
+    value: "san-pham/drap",
+  },
+  {
+    label: "Gối",
+    value: "san-pham/goi",
+  },
+  {
+    label: "Phụ kiện",
+    value: "san-pham/phu-kien",
   },
 ];
 

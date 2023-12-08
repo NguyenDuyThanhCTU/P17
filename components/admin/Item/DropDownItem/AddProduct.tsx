@@ -113,7 +113,53 @@ const AddProduct = ({}) => {
     if (!Title) {
       notification["error"]({
         message: "Lỗi !!!",
-        description: `Vui lòng bổ sung đầy đủ thông tin !`,
+        description: `Tên sản phẩm không được để trống !`,
+      });
+    } else if (!imageUrl) {
+      notification["error"]({
+        message: "Lỗi !!!",
+        description: `Ảnh sản phẩm không được để trống !`,
+      });
+    } else if (!isType) {
+      notification["error"]({
+        message: "Lỗi !!!",
+        description: `Loại sản phẩm không được để trống !`,
+      });
+    } else if (!isParent) {
+      notification["error"]({
+        message: "Lỗi !!!",
+        description: `Mục 1 sản phẩm không được để trống !`,
+      });
+    } else if (!isParent2) {
+      notification["error"]({
+        message: "Lỗi !!!",
+        description: `Mục 2 sản phẩm không được để trống !`,
+      });
+    } else if (
+      tableData[1][1] === "" &&
+      tableData[1][2] === "" &&
+      tableData[1][3] === "" &&
+      tableData[1][4] === "" &&
+      tableData[1][5] === "" &&
+      tableData[2][1] === "" &&
+      tableData[2][2] === "" &&
+      tableData[2][3] === "" &&
+      tableData[2][4] === "" &&
+      tableData[2][5] === "" &&
+      tableData[3][1] === "" &&
+      tableData[3][2] === "" &&
+      tableData[3][3] === "" &&
+      tableData[3][4] === "" &&
+      tableData[3][5] === "" &&
+      tableData[4][1] === "" &&
+      tableData[4][2] === "" &&
+      tableData[4][3] === "" &&
+      tableData[4][4] === "" &&
+      tableData[4][5] === ""
+    ) {
+      notification["error"]({
+        message: "Lỗi !!!",
+        description: `Bảng giá sản phẩm không được để trống !`,
       });
     } else {
       const data: any = {
@@ -136,7 +182,6 @@ const AddProduct = ({}) => {
         access: Math.floor(Math.random() * (10000 - 100 + 1)) + 100,
         subimage: ListSubImage,
       };
-      console.log(data);
       for (let key in data) {
         if (
           data[key] === undefined ||
@@ -147,11 +192,13 @@ const AddProduct = ({}) => {
           delete data[key];
         }
       }
+
       addDocument("products", data).then(() => {
         notification["success"]({
           message: "Tải lên thành công!",
           description: `Sản phẩm của bạn đã được tải lên !`,
         });
+        setDropDown("");
 
         setIsRefetch("CRUD products");
         // handleDiscard();

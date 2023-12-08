@@ -44,7 +44,7 @@ const ProductPage = async ({
             </div>
           </>
         ) : (
-          <></>
+          <>Không tìm thấy sản phẩm </>
         )}
       </div>
     </div>

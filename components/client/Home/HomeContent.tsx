@@ -8,7 +8,8 @@ import DisplayProduct from "../Product/DisplayProduct";
 import { TypeProductItems } from "@assets/item";
 
 const HomeContent = ({ Data }: any) => {
-  const { TradeMarkData, Slides, Videos, productTypes } = useData();
+  const { productTypes } = useData();
+
   const DrapProduct = Data.filter((product: any) => product.parent === "Drap");
   const Product1 = Data.filter((product: any) => product.parent === "Gối");
   const Product2 = Data.filter((product: any) => product.parent === "Phụ kiện");
