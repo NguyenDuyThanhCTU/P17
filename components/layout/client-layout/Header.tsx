@@ -50,7 +50,7 @@ const Header = () => {
     <>
       <div className="d:block fixed z-50 w-full top-0 p:hidden">
         <div className="flex flex-col bg-white">
-          <div className="flex justify-between gap-10 items-center d:w-[1400px] mx-auto p:w-auto">
+          <div className="grid grid-cols-4 justify-between gap-10 items-center d:w-[1400px] mx-auto p:w-auto">
             <Link href={`/`} className=" p-1 h-[70px] ">
               <img
                 src={TradeMarkData.websiteLogo}
@@ -59,8 +59,8 @@ const Header = () => {
               />
             </Link>
 
-            <div className=" relative col-span-2 flex justify-center">
-              <div className="border rounded-full border-gray-200 bg-gray-100 flex items-center ">
+            <div className=" relative col-span-2  flex justify-center w-full">
+              <div className=" w-full border rounded-full border-gray-200 bg-gray-100 flex items-center ">
                 <div className=" pl-4 w-full  justify-between items-center grid grid-cols-7 bg-gray-100">
                   <input
                     type="text"
@@ -103,8 +103,8 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <div className="col-span-2 flex justify-center">
-              <div className="w-full bg-mainblue py-2 px-4 text-white uppercase font-bold text-[22px]">
+            <div className="flex justify-end">
+              <div className=" bg-mainblue py-2 px-4 text-white uppercase font-bold text-[22px]">
                 Hotline: {ContactData.phone}
               </div>
               {/* <div className="flex gap-2 ">

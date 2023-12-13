@@ -262,7 +262,7 @@ export const HeaderItems = [
     value: "san-pham/nem-cao-su",
   },
   {
-    label: "Nem Foam",
+    label: "Nệm Foam",
     value: "san-pham/nem-foam",
   },
   {

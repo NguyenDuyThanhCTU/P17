@@ -13,7 +13,6 @@ const HomeContent = ({ Data }: any) => {
   const DrapProduct = Data.filter((product: any) => product.parent === "Drap");
   const Product1 = Data.filter((product: any) => product.parent === "Gối");
   const Product2 = Data.filter((product: any) => product.parent === "Phụ kiện");
-  console.log(Data);
   return (
     <div className="flex flex-col bg-white">
       {productTypes?.map((item: any, idx: number) => {
