@@ -3,7 +3,7 @@ import ProductCard from "../Product/ProductCard";
 import Link from "next/link";
 import { AiOutlineRight } from "react-icons/ai";
 
-const DisplayHomeProduct = ({ Data, Topic, Type, url }: any) => {
+const DisplayHomeProduct = ({ Data, Topic, url }: any) => {
   return (
     <div className="py-4">
       <div>
@@ -14,15 +14,6 @@ const DisplayHomeProduct = ({ Data, Topic, Type, url }: any) => {
             </h2>
           </div>
           <div className="flex gap-3 items-center scrollbar-thin overflow-x-auto  scrollbar-thumb-blue-300 scrollbar-track-gray-200">
-            {Type.map((item: any, idx: number) => (
-              <Link
-                href={`/san-pham/${url}?type=${item.typeUrl}`}
-                className=" w-max border px-4 py-1 text-black border-black cursor-pointer hover:bg-gray-100 duration-300 rounded-full"
-                key={idx}
-              >
-                <p className=" w-max">{item.type}</p>
-              </Link>
-            ))}
             <Link
               href={`/san-pham/${url}`}
               className="border px-4 py-1 text-black border-black cursor-pointer hover:bg-gray-100 duration-300 rounded-full"
