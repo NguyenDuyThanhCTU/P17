@@ -32,9 +32,9 @@ const Sale = () => {
               <div className="h-10 flex  justify-center items-center gap-5">
                 <div>
                   <img
-                    src="https://thegioinem.com/upload/flsdt-217348.png"
+                    src="https://firebasestorage.googleapis.com/v0/b/nemvieta-b328d.appspot.com/o/Your%20paragraph%20text.png?alt=media&token=414f819b-9c58-4836-84f9-80fb359a7fea"
                     alt="sale topic"
-                    className="w-full h-[50px]"
+                    className="w-full h-[150px]"
                   />
                 </div>
               </div>

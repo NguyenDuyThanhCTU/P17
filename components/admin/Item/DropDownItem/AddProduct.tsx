@@ -46,6 +46,7 @@ const AddProduct = ({}) => {
     ["15cm", "", "", "", "", ""],
     ["20cm", "", "", "", "", ""],
   ]);
+  const [tableData2, setTableData2] = useState<any>([]);
   const handleInputChange = (rowIndex: any, colIndex: any, event: any) => {
     const newData = [...tableData];
     newData[rowIndex][colIndex] = event.target.value;
@@ -192,7 +193,7 @@ const AddProduct = ({}) => {
           delete data[key];
         }
       }
-
+      console.log(data);
       addDocument("products", data).then(() => {
         notification["success"]({
           message: "Tải lên thành công!",
@@ -238,6 +239,143 @@ const AddProduct = ({}) => {
       (item: any) => item.uid !== file.uid
     );
     setImageUrl(newImageUrl);
+  };
+
+  const HandlePriceTable = (type: string) => {
+    if (type === "Nệm Cao Su") {
+      setTableData2(["Nệm Cao Su 1", "Nệm Cao Su 2"]);
+    } else if (type === "Nệm Loxo") {
+      setTableData2(["Nệm Loxo 1", "Nệm Loxo 2", "Nệm Loxo 3"]);
+    } else if (type === "Nệm Thông Hơi") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["10cm", "", "", "", "", ""],
+        ["10cm", "", "", "", "", ""],
+        ["15cm", "", "", "", "", ""],
+        ["20cm", "", "", "", "", ""],
+      ]);
+      setTableData2([]);
+    } else if (type === "NỆM PE") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["10cm", "", "", "", "", ""],
+
+        ["15cm", "", "", "", "", ""],
+        ["20cm", "", "", "", "", ""],
+      ]);
+      setTableData2([]);
+    } else if (type === "Nệm Massage") {
+      setTableData([
+        ["Size", "3cm", "5cm"],
+        ["Massage Cao Su Non", "", ""],
+        ["Massage Hàn Quốc", "", ""],
+      ]);
+      setTableData2([]);
+    } else if (type === "Nệm Foam") {
+      setTableData2([
+        "Bảng giá 1",
+        "Bảng giá 2",
+        "Bảng giá 3",
+        "Bảng giá 4",
+        "Bảng giá 5",
+        "Nệm đa tầng",
+      ]);
+    } else if (type === "Nệm Bông Ép") {
+      setTableData2(["Nệm Bông Ép 1", "Nệm Bông Ép 2"]);
+    } else if (type === "Drap") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["27cm", "", "", "", "", ""],
+      ]);
+      setTableData2([]);
+    }
+  };
+
+  const HandlePriceTable1 = (type: string) => {
+    if (type === "Bảng giá 1") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["5cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Bảng giá 2") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+
+        ["10cm", "", "", "", "", ""],
+        ["15cm", "", "", "", "", ""],
+        ["20cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Bảng giá 3") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+
+        ["12cm", "", "", "", "", ""],
+        ["17cm", "", "", "", "", ""],
+        ["22cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Bảng giá 4") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+
+        ["3cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Bảng giá 5") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+
+        ["25cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Bông Ép 1") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+
+        ["10cm", "", "", "", "", ""],
+        ["15cm", "", "", "", "", ""],
+        ["20cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Bông Ép 2") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+
+        ["12cm", "", "", "", "", ""],
+        ["17cm", "", "", "", "", ""],
+        ["22cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm đa tầng") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["25cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Loxo 1") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["22cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Loxo 2") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["26cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Loxo 3") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["28cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Cao Su 1") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["5cm", "", "", "", "", ""],
+        ["10cm", "", "", "", "", ""],
+        ["15cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Cao Su 2") {
+      setTableData([
+        ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
+        ["10cm", "", "", "", "", ""],
+        ["15cm", "", "", "", "", ""],
+        ["20cm", "", "", "", "", ""],
+      ]);
+    }
   };
 
   return (
@@ -445,34 +583,87 @@ const AddProduct = ({}) => {
           onCancel={() => setIsModalOpen(false)}
           footer={false}
         >
-          <div className="overflow-x-auto">
-            <table className="min-w-full">
-              <tbody>
-                {tableData.map((row, rowIndex) => (
-                  <tr key={`row-${rowIndex}`}>
-                    {row.map((cell, colIndex) => (
-                      <td
-                        key={`cell-${rowIndex}-${colIndex}`}
-                        className="border px-4 py-2"
+          <div className="flex flex-col gap-5">
+            <div className="flex gap-5">
+              <div className="flex flex-col gap-2">
+                <label className="text-md font-medium ">Mục 1:</label>
+                <select
+                  className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
+                  onChange={(e) => HandlePriceTable(e.target.value)}
+                >
+                  <option> -- Chọn Loại Bảng Báo Giá --</option>
+
+                  {[
+                    "Nệm Cao Su",
+                    "Nệm Loxo",
+                    "Nệm Massage",
+                    "Nệm Foam",
+                    "Nệm Bông Ép",
+                    "Nệm Thông Hơi",
+                    "Drap",
+                    "NỆM PE",
+                  ].map((item, idx) => (
+                    <option
+                      key={idx}
+                      className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
+                      value={item}
+                    >
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {tableData2.length > 0 && (
+                <div className="flex flex-col gap-2">
+                  <label className="text-md font-medium ">Mục 1:</label>
+                  <select
+                    className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
+                    onChange={(e) => HandlePriceTable1(e.target.value)}
+                  >
+                    <option> -- Chọn Loại Bảng Báo Giá --</option>
+
+                    {tableData2?.map((item: any, idx: any) => (
+                      <option
+                        key={idx}
+                        className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
+                        value={item}
                       >
-                        {colIndex !== 0 ? (
-                          <input
-                            type="text"
-                            value={cell}
-                            onChange={(e) =>
-                              handleInputChange(rowIndex, colIndex, e)
-                            }
-                            className="w-full"
-                          />
-                        ) : (
-                          <span>{cell}</span>
-                        )}
-                      </td>
+                        {item}
+                      </option>
                     ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                  </select>
+                </div>
+              )}
+            </div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full">
+                <tbody>
+                  {tableData.map((row, rowIndex) => (
+                    <tr key={`row-${rowIndex}`}>
+                      {row.map((cell, colIndex) => (
+                        <td
+                          key={`cell-${rowIndex}-${colIndex}`}
+                          className="border px-4 py-2"
+                        >
+                          {colIndex !== 0 ? (
+                            <input
+                              type="text"
+                              value={cell}
+                              onChange={(e) =>
+                                handleInputChange(rowIndex, colIndex, e)
+                              }
+                              className="w-full"
+                            />
+                          ) : (
+                            <span>{cell}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           {/* <div className="overflow-x-auto">
             <table className="min-w-full">

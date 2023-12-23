@@ -15,22 +15,44 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isDiscount, setIsDiscount] = React.useState(false);
   const router = useRouter();
-  const headers = ["Size", "1mx2m", "1m2x2m", "1m4x2m", "1m6x2m", "1m8x2m"];
+  let headers: any;
+
+  if (Data.type === "NỆM THÔNG HƠI") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  }
+  if (Data.type === "NỆM PE") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  }
+  if (Data.type === "NỆM FOAM") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  }
+  if (Data.type === "NỆM LOXO") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  }
+  if (Data.type === "NỆM CAO SU") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  }
+
+  console.log(headers, Data.type);
+
   const formattedTable = Data?.price.map((rowData: any, index: any) => {
     if (index === 0) {
       return headers;
     } else {
-      return headers.map((header) => rowData[header] || "");
+      return headers?.map((header: any) => rowData[header] || "");
     }
   });
 
-  const formattedNewPrice = Data?.newPrice.map((rowData: any, index: any) => {
-    if (index === 0) {
-      return headers;
-    } else {
-      return headers.map((header) => rowData[header] || "");
-    }
-  });
+  let formattedNewPrice: any;
+  if (Data?.newPrice !== undefined) {
+    formattedNewPrice = Data?.newPrice.map((rowData: any, index: any) => {
+      if (index === 0) {
+        return headers;
+      } else {
+        return headers.map((header: any) => rowData[header] || "");
+      }
+    });
+  }
 
   const items = [
     {
@@ -125,9 +147,9 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
                 <div className=" ">
                   <table className="min-w-full">
                     <tbody>
-                      {formattedTable.map((row: any, rowIndex: any) => (
+                      {formattedTable?.map((row: any, rowIndex: any) => (
                         <tr key={`row-${rowIndex}`}>
-                          {row.map((cell: any, colIndex: any) => (
+                          {row?.map((cell: any, colIndex: any) => (
                             <td
                               key={`cell-${rowIndex}-${colIndex}`}
                               className="border px-4 py-2 w-max truncate"
@@ -144,7 +166,7 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
             </div>
 
             <>
-              <div className="flex gap-5">
+              <div className="flex gap-5 d:flex-row p:flex-col  ">
                 {Data.discount !== 0 && (
                   <>
                     {" "}
@@ -158,11 +180,13 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
                     </div>
                   </>
                 )}
-                <div
-                  className=" px-10 text-[18px] text-primary bg-mainyellow border-mainyellow rounded-full text-white font-normal border hover:bg-orange-500 hover:border-orange-500 duration-300 flex items-center  py-2 justify-center cursor-pointer gap-1"
-                  onClick={() => window.open(`tel:${ContactData?.phone}`)}
-                >
-                  Liên hệ
+                <div className="flex">
+                  <div
+                    className=" px-10 h-max w-max text-[18px] text-primary bg-mainyellow border-mainyellow rounded-full text-white font-normal border hover:bg-orange-500 hover:border-orange-500 duration-300 flex items-center  py-2 justify-center cursor-pointer gap-1"
+                    onClick={() => window.open(`tel:${ContactData?.phone}`)}
+                  >
+                    Liên hệ
+                  </div>
                 </div>
               </div>
             </>
@@ -265,7 +289,7 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
                     <tbody>
                       {formattedTable?.map((row: any, rowIndex: any) => (
                         <tr key={`row-${rowIndex}`}>
-                          {row.map((cell: any, colIndex: any) => (
+                          {row?.map((cell: any, colIndex: any) => (
                             <td
                               key={`cell-${rowIndex}-${colIndex}`}
                               className="border px-4 py-2 w-max truncate"

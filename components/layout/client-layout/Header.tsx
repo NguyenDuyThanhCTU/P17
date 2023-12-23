@@ -142,7 +142,7 @@ const Header = () => {
                 {HeaderItems.map((item: any, idx: number) => (
                   <div className="relative group/main " key={idx}>
                     <Link
-                      className="text-white uppercase font-semibold duration-300 flex items-center text-[20px] gap-2 "
+                      className="text-white uppercase font-semibold duration-300 flex items-center text-[16px] gap-2 "
                       href={`/${item.value}`}
                     >
                       <p> {item.label}</p>
@@ -152,7 +152,7 @@ const Header = () => {
                       )}
                     </Link>
                     <div className="h-[2px] bg-gray-400 w-0 group-hover/main:w-full duration-300 mt-3 "></div>
-                    {item.label === "Giới thiệu" && (
+                    {/* {item.label === "Giới thiệu" && (
                       <div className="flex flex-col top-8 absolute">
                         <div className="bg-none w-full h-4"></div>
                         <div className=" top-9 hidden group-hover/main:block duration-300">
@@ -174,9 +174,9 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
-                    )}
+                    )} */}
 
-                    {item.label === "Sản phẩm" && (
+                    {/* {item.label === "Sản phẩm" && (
                       <div className="flex flex-col top-8 absolute z-50">
                         <div className="bg-none w-full h-4"></div>
                         <div className=" top-9 hidden group-hover/main:block duration-300">
@@ -281,7 +281,7 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
-                    )}
+                    )} */}
                   </div>
                 ))}
               </div>
@@ -546,7 +546,7 @@ const Header = () => {
           {openSearchMB && (
             <div className=" relative bg-white py-3">
               <div className="border rounded-full bg-white border-mainblue flex items-center ">
-                <div className=" pl-4 w-full  justify-between items-center grid grid-cols-7">
+                <div className=" pl-4 w-full text-black justify-between items-center grid grid-cols-7">
                   <input
                     type="text"
                     className="outline-none mr-2 col-span-6"
@@ -570,7 +570,7 @@ const Header = () => {
                 </div>
               </div>
               {search && (
-                <div className="absolute w-full bg-gray-50 top-full flex flex-col shadow-inner z-50 mt-2">
+                <div className="absolute w-full bg-gray-50 top-full flex flex-col shadow-2xl z-50 mt-2 text-black ">
                   <div className=" flex flex-col">
                     {searchRs.map((product: any, idx: number) => (
                       <Link

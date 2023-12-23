@@ -267,11 +267,19 @@ export const HeaderItems = [
   },
   {
     label: "Nệm lò xo",
-    value: "san-pham/nem?type=nem-lo-xo",
+    value: "san-pham/nem?type=nem-loxo",
   },
   {
     label: "Nệm bông ép",
-    value: "san-pham/nem?type=nem-bong-ep",
+    value: "san-pham/nem?type=bong-ep",
+  },
+  {
+    label: "NỆM THÔNG HƠI",
+    value: "san-pham/nem?type=nem-thong-hoi",
+  },
+  {
+    label: "NỆM PE",
+    value: "san-pham/nem?type=nem-pe",
   },
   {
     label: "Drap",

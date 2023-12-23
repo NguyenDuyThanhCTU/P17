@@ -24,7 +24,7 @@ const AddProduct = ({}) => {
   const [Content, setContent] = useState<string | undefined>();
   const [describe, setDescribe] = useState("");
   const [isType, setIsType] = useState<any>();
-  const [isParent, setIsParent] = useState("Hộp quà-giỏ quà");
+  const [isParent, setIsParent] = useState("");
   const [isChildren, setIsChildren] = useState<any>();
   const [typeUrl, setTypeUrl] = useState<string | undefined>();
   const [parentUrl, setParentUrl] = useState<string | undefined>();
@@ -39,7 +39,7 @@ const AddProduct = ({}) => {
   const { productTypes, Products, UpdateId } = useData();
   const [newPrice, setNewPrice] = useState<any>();
   const initial1 =
-    "<p>Chất liệu: </p> <br/> <p>Màu sắc: </p> <br/> <p>Size: </p> <br/> <p>Chiều dài: </p> <br/> <p>Chiều rộng: </p> <br/> <p>Chiều cao: </p> <br/> <p>Trọng lượng: </p> <br/> <p>Thương hiệu: </p> <br/> <p>Xuất xứ: </p> <br/> <p>Chất liệu";
+    "<p>Chất liệu: </p> <br/> <p>Màu sắc: </p> <br/> <p>Thiết kế: </p> <br/> <p>Chất liệu áo nệm: </p> <br/> <p>Trọng lượng: </p> ";
   const initDescribe = "<p> mô tả sản phẩm </p>";
 
   useEffect(() => {
@@ -86,16 +86,28 @@ const AddProduct = ({}) => {
     setListSubImage([]);
     setImageUrl("");
   };
-  const headers = ["Size", "1mx2m", "1m2x2m", "1m4x2m", "1m6x2m", "1m8x2m"];
+  let headers: any;
 
+  // convert  object ProductData?.price[0] to  array
+  if (ProductData?.price[0]) {
+    headers = Object.keys(ProductData?.price[0]);
+  }
+  // arrange Size value to first column in headers array
+  if (headers) {
+    const index = headers.indexOf("Size");
+    if (index > -1) {
+      headers.splice(index, 1);
+    }
+    headers.unshift("Size");
+  }
   const formattedTable = ProductData?.price.map((rowData: any, index: any) => {
     if (index === 0) {
       return headers;
     } else {
-      return headers.map((header) => rowData[header] || "");
+      return headers.map((header: any) => rowData[header] || "");
     }
   });
-
+  // console.log(headers, ProductData?.price[0]);
   useEffect(() => {
     //discount formattedTable with Discount value then set newPrice
     const applyDiscount = (priceArray: any, discountPercentage: any) => {
@@ -108,13 +120,12 @@ const AddProduct = ({}) => {
             );
             const discountedPrice =
               originalPrice * (1 - discountPercentage / 100);
-            // Làm tròn giảm giá đến 2 chữ số thập
-            // thêm dấu phẩy ngăn cách hàng nghìn
+
             priceArray[i][j] = discountedPrice
-              .toFixed(2)
+
+              .toFixed(6)
               .toString()
               .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            // priceArray[i][j] = discountedPrice;
           }
         }
       }
@@ -244,6 +255,7 @@ const AddProduct = ({}) => {
               <div>
                 Bảng giá:
                 <div className="mt-2">
+                  <>{console.log(ProductData)}</>
                   <div className="overflow-x-auto ">
                     <table className="min-w-full">
                       <tbody>
