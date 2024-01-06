@@ -31,7 +31,7 @@ const Slide = () => {
               {Slides.map((item: any, index: number) => (
                 <SwiperSlide key={index}>
                   <Link
-                    href={`/san-pham`}
+                    href={`/san-pham/nem?type=nem-cao-su`}
                     className="w-full h-[600px] overflow-hidden cursor-pointer"
                   >
                     <img

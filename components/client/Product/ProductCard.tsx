@@ -21,7 +21,6 @@ const ProductCard = ({ Data }: any) => {
 
   for (let i = 1; i <= 10; i++) {
     for (let j = 1; j < sizes.length; j++) {
-      console.log(Data.price[i]);
       if (Data.price[i] && Data.price[i][sizes[j]]) {
         price = Data.price[i][sizes[j]];
         break;

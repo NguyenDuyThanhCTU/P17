@@ -193,7 +193,6 @@ const AddProduct = ({}) => {
           delete data[key];
         }
       }
-      console.log(data);
       addDocument("products", data).then(() => {
         notification["success"]({
           message: "Tải lên thành công!",
@@ -266,11 +265,11 @@ const AddProduct = ({}) => {
       setTableData2([]);
     } else if (type === "Nệm Massage") {
       setTableData([
-        ["Size", "3cm", "5cm"],
-        ["Massage Cao Su Non", "", ""],
-        ["Massage Hàn Quốc", "", ""],
+        ["Size", "1mx2m", "1m2x2m", "1m4x2m", "1m8x2m"],
+        ["3cm", "", "", "", ""],
+        ["5cm", "", "", "", ""],
       ]);
-      setTableData2([]);
+      setTableData2(["Massage Cao Su Non", "Nệm Massage Hàn Quốc"]);
     } else if (type === "Nệm Foam") {
       setTableData2([
         "Bảng giá 1",
@@ -286,6 +285,13 @@ const AddProduct = ({}) => {
       setTableData([
         ["Size", "1m", "1m2", "1m4", "1m6", "1m8"],
         ["27cm", "", "", "", "", ""],
+      ]);
+      setTableData2([]);
+    } else if (type === "Gối") {
+      setTableData([
+        ["Loại", "Giá"],
+        ["Gối nằm (40cm x 60cm)", ""],
+        ["Gối Ôm (1m)", ""],
       ]);
       setTableData2([]);
     }
@@ -374,6 +380,18 @@ const AddProduct = ({}) => {
         ["10cm", "", "", "", "", ""],
         ["15cm", "", "", "", "", ""],
         ["20cm", "", "", "", "", ""],
+      ]);
+    } else if (type === "Massage Cao Su Non") {
+      setTableData([
+        ["Massage Cao Su Non", "1mx2m", "1m2x2m", "1m4x2m", "1m8x2m"],
+        ["3cm", "", "", "", ""],
+        ["5cm", "", "", "", ""],
+      ]);
+    } else if (type === "Nệm Massage Hàn Quốc") {
+      setTableData([
+        ["Massage Hàn Quốc", "1mx2m", "1m2x2m", "1m4x2m", "1m8x2m"],
+        ["3cm", "", "", "", ""],
+        ["5cm", "", "", "", ""],
       ]);
     }
   };
@@ -602,6 +620,7 @@ const AddProduct = ({}) => {
                     "Nệm Thông Hơi",
                     "Drap",
                     "NỆM PE",
+                    "Gối",
                   ].map((item, idx) => (
                     <option
                       key={idx}

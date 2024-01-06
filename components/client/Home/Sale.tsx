@@ -52,7 +52,7 @@ const Sale = () => {
                   modules={[]}
                   className="mySwiper "
                 >
-                  <div className="mt-5  gird grid-cols-5 ">
+                  <div className="mt-5   ">
                     {ProductFiltered?.map((items: any, idx: number) => (
                       <SwiperSlide key={idx}>
                         <div>
@@ -68,7 +68,7 @@ const Sale = () => {
                   spaceBetween={30}
                   loop={true}
                   centeredSlides={true}
-                  slidesPerView={3}
+                  slidesPerView={2}
                   slidesPerGroup={1}
                   autoplay={{
                     delay: 2500,

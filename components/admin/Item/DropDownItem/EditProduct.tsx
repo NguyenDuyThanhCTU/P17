@@ -107,7 +107,6 @@ const AddProduct = ({}) => {
       return headers.map((header: any) => rowData[header] || "");
     }
   });
-  // console.log(headers, ProductData?.price[0]);
   useEffect(() => {
     //discount formattedTable with Discount value then set newPrice
     const applyDiscount = (priceArray: any, discountPercentage: any) => {
@@ -255,7 +254,6 @@ const AddProduct = ({}) => {
               <div>
                 Bảng giá:
                 <div className="mt-2">
-                  <>{console.log(ProductData)}</>
                   <div className="overflow-x-auto ">
                     <table className="min-w-full">
                       <tbody>

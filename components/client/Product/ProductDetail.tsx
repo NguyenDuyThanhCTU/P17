@@ -17,23 +17,21 @@ const ProductDetail = ({ Data, SimilarProduct }: any) => {
   const router = useRouter();
   let headers: any;
 
-  if (Data.type === "NỆM THÔNG HƠI") {
+  if (Object.keys(Data?.price[0]).includes("1m4x2m")) {
+    headers = ["Size", "1mx2m", "1m2x2m", "1m4x2m", "1m6x2m", "1m8x2m"];
+  } else if (Data.type === "NỆM THÔNG HƠI") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  } else if (Data.type === "NỆM PE") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  } else if (Data.type === "NỆM FOAM") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  } else if (Data.type === "NỆM LOXO") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  } else if (Data.type === "NỆM CAO SU") {
+    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
+  } else if (Data.type === "DRAP") {
     headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
   }
-  if (Data.type === "NỆM PE") {
-    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
-  }
-  if (Data.type === "NỆM FOAM") {
-    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
-  }
-  if (Data.type === "NỆM LOXO") {
-    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
-  }
-  if (Data.type === "NỆM CAO SU") {
-    headers = ["Size", "1m", "1m2", "1m4", "1m6", "1m8"];
-  }
-
-  console.log(headers, Data.type);
 
   const formattedTable = Data?.price.map((rowData: any, index: any) => {
     if (index === 0) {

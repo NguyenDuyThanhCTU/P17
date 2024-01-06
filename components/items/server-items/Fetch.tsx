@@ -70,7 +70,7 @@ const Fetch: React.FC = () => {
     });
 
     getAllDocuments("branches").then((data: any) => {
-      setBranches(data?.reverse());
+      setBranches(data);
     });
 
     getAllDocuments("videos").then((data: any) => {
